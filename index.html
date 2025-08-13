@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayush Singhal - UPI Growth Analysis Project</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- AOS (Animate On Scroll) Library for animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Prism.js for code highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B1120; /* A darker, professional base color */
+        }
+        .animated-gradient-header {
+            background: linear-gradient(-45deg, #0B1120, #1F2937, #374151, #111827);
+            background-size: 400% 400%;
+            animation: gradient-animation 15s ease infinite;
+        }
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.2), 0 8px 10px -6px rgb(0 0 0 / 0.2);
+        }
+    </style>
+</head>
+<body class="text-gray-200">
+
+    <!-- Header Section -->
+    <header class="animated-gradient-header text-center py-20 px-4" data-aos="fade-in">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white">UPI India - Digital Payments Growth Analysis</h1>
+        <p class="mt-4 text-lg text-gray-300">An end-to-end data analysis project by Ayush Singhal.</p>
+    </header>
+
+    <div class="container mx-auto p-4 sm:p-6 md:p-12">
+
+        <!-- Dashboard Showcase Section -->
+        <section id="dashboard" class="mb-24" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center mb-8 text-white">Power BI Dashboard Showcase</h2>
+            <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-2xl p-4 border border-gray-700">
+                <!-- IMPORTANT: Assumes Dashboard.jpg is in the root of your repository -->
+                <img src="Dashboard.jpg" alt="Power BI Dashboard Screenshot" class="rounded-lg w-full">
+                <p class="text-center mt-4 text-sm text-gray-500">Note: A live dashboard link is unavailable due to Power BI's personal account limitations.</p>
+            </div>
+        </section>
+
+        <!-- Key Insights Section -->
+        <section id="insights" class="mb-24">
+            <h2 class="text-3xl font-bold text-center mb-12 text-white" data-aos="fade-up">Key Analytical Insights</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-hover bg-gray-800/50 p-6 rounded-lg shadow-lg border border-gray-700" data-aos="fade-up">
+                    <p class="font-bold text-blue-400 text-xl mb-2">7,860% Growth</p>
+                    <p class="text-gray-300">Transaction volumes exploded since 2018, signifying mass-market adoption.</p>
+                </div>
+                <div class="card-hover bg-gray-800/50 p-6 rounded-lg shadow-lg border border-gray-700" data-aos="fade-up" data-aos-delay="100">
+                    <p class="font-bold text-blue-400 text-xl mb-2">Shift to Micro-Payments</p>
+                    <p class="text-gray-300">Average transaction value was cut in half, proving a shift to smaller, everyday payments.</p>
+                </div>
+                <div class="card-hover bg-gray-800/50 p-6 rounded-lg shadow-lg border border-gray-700" data-aos="fade-up" data-aos-delay="200">
+                    <p class="font-bold text-blue-400 text-xl mb-2">Pandemic Catalyst</p>
+                    <p class="text-gray-300">The 2020-2021 period massively accelerated adoption, cementing UPI as essential.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Tools & Technologies Section -->
+        <section id="tools" class="mb-24">
+            <h2 class="text-3xl font-bold text-center mb-12 text-white" data-aos="fade-up">Tools & Technologies</h2>
+            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20" data-aos="zoom-in">
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" class="h-20 w-20 card-hover" title="Python">
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sqlite/sqlite-original-wordmark.svg" alt="SQL" class="h-20 w-20 card-hover" title="SQL">
+                <svg class="h-20 w-20 card-hover" title="Power BI" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path fill="#f2c811" d="M824.9 411.3c-8.3-21-22.3-39.1-40.9-52.9-18.6-13.8-41.3-22.3-66.7-24.6-25.4-2.3-52.6 1.2-78.5 10.3-25.9 9.1-50.1 23.6-69.9 42.2-19.8 18.6-34.8 41.3-44.2 66.7-9.4 25.4-13.2 52.9-11.2 81.4 2 28.5 9.7 56.4 22.3 81.4 12.6 25 30.4 46.8 52.2 63.9 21.8 17.1 47.7 29.1 76.2 35.1 28.5 6 59.3 5.7 88.5-1.2 29.2-6.9 56.4-20.4 79.8-39.1 23.4-18.7 42.2-42.8 54.5-70.6 12.3-27.8 17.7-58.3 15.8-89.8-1.9-31.5-11.2-62-27.2-89.1zm-482.2 0c-8.3-21-22.3-39.1-40.9-52.9-18.6-13.8-41.3-22.3-66.7-24.6-25.4-2.3-52.6 1.2-78.5 10.3-25.9 9.1-50.1 23.6-69.9 42.2-19.8 18.6-34.8 41.3-44.2 66.7-9.4 25.4-13.2 52.9-11.2 81.4 2 28.5 9.7 56.4 22.3 81.4 12.6 25 30.4 46.8 52.2 63.9 21.8 17.1 47.7 29.1 76.2 35.1 28.5 6 59.3 5.7 88.5-1.2 29.2-6.9 56.4-20.4 79.8-39.1 23.4-18.7 42.2-42.8 54.5-70.6 12.3-27.8 17.7-58.3 15.8-89.8-1.9-31.5-11.2-62-27.2-89.1zm482.2-246.3c-8.3-21-22.3-39.1-40.9-52.9-18.6-13.8-41.3-22.3-66.7-24.6-25.4-2.3-52.6 1.2-78.5 10.3-25.9 9.1-50.1 23.6-69.9 42.2-19.8 18.6-34.8 41.3-44.2 66.7-9.4 25.4-13.2 52.9-11.2 81.4 2 28.5 9.7 56.4 22.3 81.4 12.6 25 30.4 46.8 52.2 63.9 21.8 17.1 47.7 29.1 76.2 35.1 28.5 6 59.3 5.7 88.5-1.2 29.2-6.9 56.4-20.4 79.8-39.1 23.4-18.7 42.2-42.8 54.5-70.6 12.3-27.8 17.7-58.3 15.8-89.8-1.9-31.5-11.2-62-27.2-89.1zM342.7 165c-8.3-21-22.3-39.1-40.9-52.9-18.6-13.8-41.3-22.3-66.7-24.6-25.4-2.3-52.6 1.2-78.5 10.3-25.9 9.1-50.1 23.6-69.9 42.2-19.8 18.6-34.8 41.3-44.2 66.7-9.4 25.4-13.2 52.9-11.2 81.4 2 28.5 9.7 56.4 22.3 81.4 12.6 25 30.4 46.8 52.2 63.9 21.8 17.1 47.7 29.1 76.2 35.1 28.5 6 59.3 5.7 88.5-1.2 29.2-6.9 56.4-20.4 79.8-39.1 23.4-18.7 42.2-42.8 54.5-70.6 12.3-27.8 17.7-58.3 15.8-89.8-1.9-31.5-11.2-62-27.2-89.1zM588.9 94.7H442.7v123h246.3V94.7z"/></svg>
+            </div>
+        </section>
+
+        <!-- Python EDA Visuals Section -->
+        <section id="eda" class="mb-24">
+            <h2 class="text-3xl font-bold text-center mb-12 text-white" data-aos="fade-up">Python EDA Visuals</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="card-hover bg-gray-800/50 p-4 rounded-xl shadow-2xl border border-gray-700" data-aos="fade-up">
+                    <h3 class="font-semibold text-center text-lg mb-4 text-gray-300">Overall Volume Growth Trend</h3>
+                    <img src="upi_volume_growth.png" alt="UPI Volume Growth" class="rounded-md w-full bg-white p-1">
+                </div>
+                <div class="card-hover bg-gray-800/50 p-4 rounded-xl shadow-2xl border border-gray-700" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="font-semibold text-center text-lg mb-4 text-gray-300">Transaction Volume Forecast</h3>
+                    <img src="upi_forecast_plot_final.jpg" alt="UPI Forecast Plot" class="rounded-md w-full bg-white p-1">
+                </div>
+                <div class="card-hover bg-gray-800/50 p-4 rounded-xl shadow-2xl border border-gray-700" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="font-semibold text-center text-lg mb-4 text-gray-300">Seasonal Transaction Heatmap</h3>
+                    <img src="upi_seasonal_heatmap.jpg" alt="Seasonal Heatmap" class="rounded-md w-full">
+                </div>
+                <div class="card-hover bg-gray-800/50 p-4 rounded-xl shadow-2xl border border-gray-700" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="font-semibold text-center text-lg mb-4 text-gray-300">Time-Series Decomposition</h3>
+                    <img src="upi_decomposition_plot.jpg" alt="Time-Series Decomposition" class="rounded-md w-full bg-white p-1">
+                </div>
+            </div>
+        </section>
+
+        <!-- Code Snippet Section -->
+        <section id="code" class="mb-24">
+            <h2 class="text-3xl font-bold text-center mb-12 text-white" data-aos="fade-up">Code Snippet: Forecasting</h2>
+            <div class="max-w-3xl mx-auto" data-aos="fade-up">
+                <div class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700">
+<pre class="line-numbers"><code class="language-python">
+# Uses Facebook Prophet to forecast transaction volumes
+def forecast_transactions(df):
+    prophet_df = df[['Date', 'TransactionVolume_Cr']]
+    prophet_df = prophet_df.rename(columns={
+        'Date': 'ds', 'TransactionVolume_Cr': 'y'
+    })
+
+    model = Prophet(
+        yearly_seasonality=True, 
+        seasonality_mode='multiplicative'
+    )
+    model.fit(prophet_df)
+
+    future = model.make_future_dataframe(
+        periods=24, freq='MS'
+    )
+    forecast = model.predict(future)
+    
+    fig = model.plot(forecast)
+    return forecast
+</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Files Section -->
+        <section id="files" class="text-center" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-6 text-white">Project Files & Code</h2>
+            <p class="mb-8 text-gray-400 max-w-2xl mx-auto">Explore the complete project, including the Python script, SQL queries, and datasets, on GitHub.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://github.com/ayushsinghal99/UPI-Analysis-Project" target="_blank" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-500 transition-all duration-300 transform hover:scale-105">
+                    View on GitHub
+                </a>
+                <a href="https://github.com/ayushsinghal99/UPI-Analysis-Project/raw/main/data/upi_processed_data.csv" class="bg-green-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-green-500 transition-all duration-300 transform hover:scale-105">
+                    Download CSV Data
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- AOS (Animate On Scroll) Library Initialization -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+    </script>
+    
+    <!-- Prism.js for code highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+</body>
+</html>
