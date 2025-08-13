@@ -1,147 +1,129 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayush Singhal - UPI Growth Analysis Project</title>
     
-    <!-- EMBEDDED STYLES: All necessary styling is included here to ensure it works everywhere. -->
+    <!-- All necessary styling is included here to ensure it works everywhere. -->
     <style>
+        /* Google Font Import */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+
         /* Basic Reset & Body Styles */
         body, html {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif; /* Fallback to sans-serif */
+            font-family: 'Inter', sans-serif;
             background-color: #0B1120; /* Dark background */
             color: #E5E7EB; /* Light gray text */
         }
-        
-        /* Google Font Import */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
 
         /* Main Container */
         .container {
             width: 100%;
-            max-width: 1280px; /* Corresponds to Tailwind's max-w-7xl */
+            max-width: 1280px;
             margin-left: auto;
             margin-right: auto;
-            padding: 2rem; /* p-8 */
+            padding: 2rem;
         }
 
-        /* Header & Animation */
-        .animated-gradient-header {
+        /* Header */
+        .header {
             text-align: center;
             padding: 5rem 1rem;
-            background: linear-gradient(-45deg, #0B1120, #1F2937, #374151, #111827);
-            background-size: 400% 400%;
-            animation: gradient-animation 15s ease infinite;
-        }
-        @keyframes gradient-animation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            background-color: #111827; /* A simple, solid dark background */
         }
         .header-title {
-            font-size: 2.25rem; /* text-4xl */
-            line-height: 2.5rem;
-            font-weight: 800; /* extrabold */
+            font-size: 2.5rem;
+            font-weight: 800;
             color: #FFFFFF;
         }
         .header-subtitle {
             margin-top: 1rem;
-            font-size: 1.125rem; /* text-lg */
-            color: #D1D5DB; /* text-gray-300 */
+            font-size: 1.125rem;
+            color: #D1D5DB;
         }
 
         /* Section Styling */
         section {
-            margin-bottom: 6rem; /* mb-24 */
+            margin-bottom: 4rem;
         }
         .section-title {
-            font-size: 1.875rem; /* text-3xl */
+            font-size: 1.875rem;
             font-weight: 700;
             text-align: center;
-            margin-bottom: 3rem; /* mb-12 */
+            margin-bottom: 2.5rem;
             color: #FFFFFF;
         }
 
         /* Card Styling */
         .card {
-            background-color: rgba(31, 41, 55, 0.5); /* bg-gray-800/50 */
-            backdrop-filter: blur(4px);
-            border-radius: 0.75rem; /* rounded-xl */
-            padding: 1.5rem; /* p-6 */
-            border: 1px solid #374151; /* border-gray-700 */
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.2), 0 8px 10px -6px rgb(0 0 0 / 0.2);
+            background-color: #1F2937; /* bg-gray-800 */
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            border: 1px solid #374151;
+            margin-bottom: 1rem;
         }
 
         /* Grid Layout */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(1, minmax(0, 1fr));
-            gap: 2rem; /* gap-8 */
+            grid-template-columns: 1fr;
+            gap: 2rem;
         }
-        @media (min-width: 768px) { /* md breakpoint */
-            .grid-container-insights {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
+        @media (min-width: 768px) {
+            .grid-container-insights, .grid-container-eda {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
-        @media (min-width: 1024px) { /* lg breakpoint */
+        @media (min-width: 1024px) {
             .grid-container-insights {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-            }
-            .grid-container-eda {
-                 grid-template-columns: repeat(2, minmax(0, 1fr));
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
         /* Typography for Insights */
         .insight-title {
             font-weight: 700;
-            font-size: 1.25rem; /* text-xl */
+            font-size: 1.25rem;
             margin-bottom: 0.5rem;
-            color: #60A5FA; /* text-blue-400 */
-        }
-        .insight-text {
-            color: #D1D5DB; /* text-gray-300 */
+            color: #60A5FA;
         }
         
         /* EDA Visuals */
         .eda-title {
             font-weight: 600;
             text-align: center;
-            font-size: 1.125rem; /* text-lg */
+            font-size: 1.125rem;
             margin-bottom: 1rem;
-            color: #D1D5DB;
         }
         .eda-image {
-            border-radius: 0.375rem; /* rounded-md */
+            border-radius: 0.375rem;
             width: 100%;
             background-color: #FFFFFF;
-            padding: 0.25rem; /* p-1 */
+            padding: 0.25rem;
         }
 
         /* Tools & Tech */
         .tools-container {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
-            gap: 3rem; /* gap-12 */
+            align-items: flex-start; /* Aligns items to the top */
+            gap: 3rem;
+        }
+        .tool-item {
+            text-align: center;
         }
         .tool-logo {
-            height: 5rem; /* h-20 */
-            width: 5rem; /* w-20 */
-            transition: transform 0.3s ease;
+            height: 5rem;
+            width: 5rem;
+            margin-bottom: 0.5rem; /* Space between logo and text */
         }
-        .tool-logo:hover {
-            transform: scale(1.1);
+        .tool-name {
+            font-weight: 500;
+            color: #9CA3AF; /* text-gray-400 */
         }
         
         /* Buttons */
@@ -150,42 +132,28 @@
         }
         .button-group {
             display: inline-flex;
-            flex-wrap: wrap;
-            justify-content: center;
             gap: 1rem;
         }
         .button {
             display: inline-block;
             color: #FFFFFF;
             font-weight: 700;
-            padding: 0.75rem 2rem; /* py-3 px-8 */
-            border-radius: 0.5rem; /* rounded-lg */
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
             text-decoration: none;
-            transition: all 0.3s ease;
-            transform-origin: center;
+            transition: background-color 0.3s ease;
         }
-        .button:hover {
-            transform: scale(1.05);
-        }
-        .button-github {
-            background-color: #3B82F6; /* bg-blue-600 */
-        }
-        .button-github:hover {
-            background-color: #2563EB; /* bg-blue-700 */
-        }
-        .button-data {
-            background-color: #16A34A; /* bg-green-600 */
-        }
-        .button-data:hover {
-            background-color: #15803D; /* bg-green-700 */
-        }
+        .button-github { background-color: #3B82F6; }
+        .button-github:hover { background-color: #2563EB; }
+        .button-data { background-color: #16A34A; }
+        .button-data:hover { background-color: #15803D; }
 
     </style>
 </head>
 <body>
 
     <!-- Header Section -->
-    <header class="animated-gradient-header">
+    <header class="header">
         <h1 class="header-title">UPI India - Digital Payments Growth Analysis</h1>
         <p class="header-subtitle">An end-to-end data analysis project by Ayush Singhal.</p>
     </header>
@@ -196,8 +164,7 @@
         <section id="dashboard">
             <h2 class="section-title">Power BI Dashboard Showcase</h2>
             <div class="card">
-                <!-- IMPORTANT: For this to work, you MUST upload Dashboard.jpg to your GitHub repo and use the full, raw URL here. -->
-                <!-- Example: https://raw.githubusercontent.com/your-username/your-repo/main/Dashboard.jpg -->
+                <!-- Assumes Dashboard.jpg is in the same folder as index.html -->
                 <img src="Dashboard.jpg" alt="Power BI Dashboard Screenshot" style="border-radius: 0.5rem; width: 100%;">
                 <p style="text-align: center; margin-top: 1rem; font-size: 0.875rem; color: #6B7280;">Note: A live dashboard link is unavailable due to Power BI's personal account limitations.</p>
             </div>
@@ -209,15 +176,15 @@
             <div class="grid-container grid-container-insights">
                 <div class="card">
                     <p class="insight-title">7,860% Growth</p>
-                    <p class="insight-text">Transaction volumes exploded since 2018, signifying mass-market adoption.</p>
+                    <p>Transaction volumes exploded since 2018, signifying mass-market adoption.</p>
                 </div>
                 <div class="card">
                     <p class="insight-title">Shift to Micro-Payments</p>
-                    <p class="insight-text">Average transaction value was cut in half, proving a shift to smaller, everyday payments.</p>
+                    <p>Average transaction value was cut in half, proving a shift to smaller, everyday payments.</p>
                 </div>
                 <div class="card">
                     <p class="insight-title">Pandemic Catalyst</p>
-                    <p class="insight-text">The 2020-2021 period massively accelerated adoption, cementing UPI as essential.</p>
+                    <p>The 2020-2021 period massively accelerated adoption, cementing UPI as essential.</p>
                 </div>
             </div>
         </section>
@@ -226,9 +193,18 @@
         <section id="tools">
             <h2 class="section-title">Tools & Technologies</h2>
             <div class="tools-container">
-                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" class="tool-logo" title="Python">
-                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sqlite/sqlite-original-wordmark.svg" alt="SQL" class="tool-logo" title="SQL">
-                <svg class="tool-logo" title="Power BI" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path fill="#f2c811" d="M824.9 411.3c-8.3-21-22.3-39.1-40.9-52.9-18.6-13.8-41.3-22.3-66.7-24.6-25.4-2.3-52.6 1.2-78.5 10.3-25.9 9.1-50.1 23.6-69.9 42.2-19.8 18.6-34.8 41.3-44.2 66.7-9.4 25.4-13.2 52.9-11.2 81.4 2 28.5 9.7 56.4 22.3 81.4 12.6 25 30.4 46.8 52.2 63.9 21.8 17.1 47.7 29.1 76.2 35.1 28.5 6 59.3 5.7 88.5-1.2 29.2-6.9 56.4-20.4 79.8-39.1 23.4-18.7 42.2-42.8 54.5-70.6 12.3-27.8 17.7-58.3 15.8-89.8-1.9-31.5-11.2-62-27.2-89.1zm-482.2 0c-8.3-21-22.3-39.1-40.9-52.9-18.6-13.8-41.3-22.3-66.7-24.6-25.4-2.3-52.6 1.2-78.5 10.3-25.9 9.1-50.1 23.6-69.9 42.2-19.8 18.6-34.8 41.3-44.2 66.7-9.4 25.4-13.2 52.9-11.2 81.4 2 28.5 9.7 56.4 22.3 81.4 12.6 25 30.4 46.8 52.2 63.9 21.8 17.1 47.7 29.1 76.2 35.1 28.5 6 59.3 5.7 88.5-1.2 29.2-6.9 56.4-20.4 79.8-39.1 23.4-18.7 42.2-42.8 54.5-70.6 12.3-27.8 17.7-58.3 15.8-89.8-1.9-31.5-11.2-62-27.2-89.1zm482.2-246.3c-8.3-21-22.3-39.1-40.9-52.9-18.6-13.8-41.3-22.3-66.7-24.6-25.4-2.3-52.6 1.2-78.5 10.3-25.9 9.1-50.1 23.6-69.9 42.2-19.8 18.6-34.8 41.3-44.2 66.7-9.4 25.4-13.2 52.9-11.2 81.4 2 28.5 9.7 56.4 22.3 81.4 12.6 25 30.4 46.8 52.2 63.9 21.8 17.1 47.7 29.1 76.2 35.1 28.5 6 59.3 5.7 88.5-1.2 29.2-6.9 56.4-20.4 79.8-39.1 23.4-18.7 42.2-42.8 54.5-70.6 12.3-27.8 17.7-58.3 15.8-89.8-1.9-31.5-11.2-62-27.2-89.1zM342.7 165c-8.3-21-22.3-39.1-40.9-52.9-18.6-13.8-41.3-22.3-66.7-24.6-25.4-2.3-52.6 1.2-78.5 10.3-25.9 9.1-50.1 23.6-69.9 42.2-19.8 18.6-34.8 41.3-44.2 66.7-9.4 25.4-13.2 52.9-11.2 81.4 2 28.5 9.7 56.4 22.3 81.4 12.6 25 30.4 46.8 52.2 63.9 21.8 17.1 47.7 29.1 76.2 35.1 28.5 6 59.3 5.7 88.5-1.2 29.2-6.9 56.4-20.4 79.8-39.1 23.4-18.7 42.2-42.8 54.5-70.6 12.3-27.8 17.7-58.3 15.8-89.8-1.9-31.5-11.2-62-27.2-89.1zM588.9 94.7H442.7v123h246.3V94.7z"/></svg>
+                <div class="tool-item">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" class="tool-logo" title="Python">
+                    <p class="tool-name">Python</p>
+                </div>
+                <div class="tool-item">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sqlite/sqlite-original-wordmark.svg" alt="SQL" class="tool-logo" title="SQL">
+                    <p class="tool-name">SQL</p>
+                </div>
+                <div class="tool-item">
+                    <svg class="tool-logo" title="Power BI" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path fill="#f2c811" d="M162.5 202.5h-109v255h109c60.2 0 109-48.8 109-109v-37c0-60.2-48.8-109-109-109zm-16 199h-37v-143h37c37.9 0 69 31.1 69 69v5c0 37.9-31.1 69-69 69zm185-199h-109v255h109c60.2 0 109-48.8 109-109v-37c0-60.2-48.8-109-109-109zm-16 199h-37v-143h37c37.9 0 69 31.1 69 69v5c0 37.9-31.1 69-69 69zM512 55v347H403V55h109z"/></svg>
+                    <p class="tool-name">Power BI</p>
+                </div>
             </div>
         </section>
 
@@ -238,18 +214,22 @@
             <div class="grid-container grid-container-eda">
                 <div class="card">
                     <h3 class="eda-title">Overall Volume Growth Trend</h3>
+                    <!-- CORRECTED FILENAME -->
                     <img src="upi_volume_growth.png" alt="UPI Volume Growth" class="eda-image">
                 </div>
                 <div class="card">
                     <h3 class="eda-title">Transaction Volume Forecast</h3>
-                    <img src="upi_forecast_plot_final.jpg" alt="UPI Forecast Plot" class="eda-image">
+                    <!-- CORRECTED FILENAME -->
+                    <img src="upi_forecast_plot_final.png" alt="UPI Forecast Plot" class="eda-image">
                 </div>
                 <div class="card">
                     <h3 class="eda-title">Seasonal Transaction Heatmap</h3>
-                    <img src="upi_seasonal_heatmap.jpg" alt="Seasonal Heatmap" style="border-radius: 0.375rem; width: 100%;">
+                    <!-- CORRECTED FILENAME -->
+                    <img src="upi_seasonal_heatmap.png" alt="Seasonal Heatmap" style="border-radius: 0.375rem; width: 100%;">
                 </div>
                 <div class="card">
                     <h3 class="eda-title">Time-Series Decomposition</h3>
+                    <!-- CORRECTED FILENAME -->
                     <img src="upi_decomposition_plot.jpg" alt="Time-Series Decomposition" class="eda-image">
                 </div>
             </div>
