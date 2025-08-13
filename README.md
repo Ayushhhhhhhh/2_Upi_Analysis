@@ -12,6 +12,11 @@ Final Dashboard
 
 
 
+
+
+
+
+
 Key Insights
 Transaction volumes have exploded by over 7,860% from the start of 2018 to the end of 2023, signifying mass-market adoption.
 
@@ -46,4 +51,5 @@ UPI_Analysis_Project/
 ├── upi_analysis.py    # Main Python script for analysis and forecasting
 ├── requirements.txt   # List of Python dependencies
 └── README.md          # Project overview and documentation
+
 
