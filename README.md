@@ -20,7 +20,7 @@ An interactive dashboard was developed in Power BI to visualize key trends, KPIs
 
 **Final Dashboard Preview:**
 
-![UPI India - Digital Payments Growth Analysis](dashboard/upi_dashboard_preview.png)
+![UPI India - Digital Payments Growth Analysis](Dashboard.jpg)
 
 *(Above: The Power BI dashboard visualizes total transaction volume, total value, average transaction value, year-wise growth, forecasts, and key insights.)*
 
