@@ -8,7 +8,8 @@ An interactive dashboard was built in Power BI to visualize key trends, KPIs, an
 Note: Due to Power BI licensing for personal accounts, a public live link cannot be generated. The showcase below demonstrates the dashboard's design and functionality.
 
 Final Dashboard
-![alt text](image.png)
+<img width="1121" height="632" alt="image" src="https://github.com/user-attachments/assets/0eb9e9f8-0e9d-4127-8f38-3e984dc97fc2" />
+
 
 
 Key Insights
@@ -45,3 +46,4 @@ UPI_Analysis_Project/
 ├── upi_analysis.py    # Main Python script for analysis and forecasting
 ├── requirements.txt   # List of Python dependencies
 └── README.md          # Project overview and documentation
+
